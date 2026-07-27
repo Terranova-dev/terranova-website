@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-cream: #f7f3ec;
+  --color-cream-light: #fbf9f4;
+  --color-dark: #121009;
+  --color-dark-deep: #141109;
+  --color-gold: #a07d3e;
+  --color-gold-light: #b89a64;
+  --color-gold-dark: #7c5f2c;
+  --color-brown: #211e17;
+  --color-brown-muted: #635a4c;
+  --color-brown-light: #9b8a70;
+  --color-brown-warm: #7d6e57;
+  --color-tan: #a89e8a;
+  --color-border-light: #ded4c3;
+  --color-border-warm: #e7dfd0;
+  --font-heading: "Newsreader", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-ui: "Jost", system-ui, sans-serif;
+}
+
+@font-face {
+  font-family: "Newsreader";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/newsreader/v20/cY9qfjOCX1hbuyalUrK49dLac06G1ZGsZBtoBCzBDXXD9JVF438w-IbhIQWEXBE.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Newsreader";
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/newsreader/v20/cY9kfjOCX1hbuyalUrK439vyoTpb_-ZXLIbNhgiIDIZJOKdBGr2VnUHqWJ0.woff2") format("woff2");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-dark);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
