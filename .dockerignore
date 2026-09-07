@@ -1,0 +1,14 @@
+Dockerfile
+.dockerignore
+.git
+.gitignore
+.next
+node_modules
+npm-debug.log*
+README.md
+*.md
+.env*
+.vercel
+.cursor
+agent-transcripts
+Terranova*.html

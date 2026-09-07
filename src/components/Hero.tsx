@@ -1,71 +1,100 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import Reveal from "@/components/Reveal";
 
 export default function Hero() {
-  return (
-    <section className="relative h-[1200px] overflow-hidden">
-      {/* Background gradients */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse at 30% 18%, rgba(29,25,15,1) 0%, rgba(20,17,9,1) 55%, rgba(16,12,6,1) 100%)",
-        }}
-      />
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(180deg, rgba(18, 15, 8, 0) 0%, rgba(18, 15, 8, 0) 12%, rgba(247, 243, 236, 0.55) 20%, rgb(247, 243, 236) 33%, rgb(247, 243, 236) 100%)",
-        }}
-      />
+  const sectionRef = useRef<HTMLElement>(null);
+  const [fade, setFade] = useState(1);
 
-      {/* Content */}
-      <div className="relative z-10 px-[380px] pt-[418px]">
-        {/* Label */}
-        <div className="flex items-center gap-[10px] mb-[35px]">
-          <span className="w-[24.63px] h-px bg-gold" />
-          <span className="font-[Jost] text-[11.2px] tracking-[4.032px] uppercase text-gold-dark">
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    let frame = 0;
+
+    const update = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const rect = el.getBoundingClientRect();
+        const height = rect.height || 1;
+        // 1 at top, 0 once hero is mostly scrolled past
+        const progress = Math.min(Math.max(-rect.top / (height * 0.65), 0), 1);
+        setFade(1 - progress);
+      });
+    };
+
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, []);
+
+  const contentFade = {
+    opacity: fade,
+    transform: `translate3d(0, ${(1 - fade) * -2.5}rem, 0)`,
+    willChange: "opacity, transform" as const,
+  };
+
+  const scrollFade = {
+    opacity: fade,
+    transform: `translate3d(-50%, ${(1 - fade) * -2.5}rem, 0)`,
+    willChange: "opacity, transform" as const,
+  };
+
+  return (
+    <section ref={sectionRef} className="hero">
+      <div className="hero__bg hero__bg--charcoal" aria-hidden="true" />
+      <div className="hero__veil" aria-hidden="true" />
+
+      <div className="container hero__content" style={contentFade}>
+        <Reveal immediate delay={80}>
+          <span className="eyebrow eyebrow--mark hero__eyebrow">
             High-End Flooring
           </span>
-        </div>
+        </Reveal>
 
-        {/* Heading */}
-        <h1 className="font-[Newsreader] text-[89.6px] font-medium leading-[93.18px] tracking-[-0.448px] text-dark mb-[37px]">
-          Floors that hold
-          <br />
-          <em>a room together.</em>
-        </h1>
+        <Reveal immediate delay={180}>
+          <h1 className="hero__title">
+            <span className="hero__line">
+              <span className="hero__line-inner">Floors that hold</span>
+            </span>
+            <span className="hero__line">
+              <span className="hero__line-inner">a room together.</span>
+            </span>
+          </h1>
+        </Reveal>
 
-        {/* Description */}
-        <p className="font-[Inter] text-[20px] leading-[34px] text-brown max-w-[560px] mb-[47px]">
-          Engineered hardwood, natural stone and marble, seamless microcement
-          and terrazzo — designed and laid by hand for landmark residential,
-          hospitality and commercial spaces.
-        </p>
+        <Reveal immediate delay={320}>
+          <p className="hero__sub">
+            Engineered hardwood, natural stone and marble, seamless microcement
+            and terrazzo — designed and laid by hand for landmark residential,
+            hospitality and commercial spaces.
+          </p>
+        </Reveal>
 
-        {/* CTAs */}
-        <div className="flex items-center gap-[32px]">
-          <Link
-            href="#collections"
-            className="inline-block bg-dark text-cream font-[Jost] text-[12.8px] tracking-[2.304px] uppercase px-[34px] py-[18px] rounded-[2px] border border-dark hover:bg-gold-dark hover:border-gold-dark transition-colors"
-          >
-            View collections
-          </Link>
-          <Link
-            href="#contact"
-            className="font-[Jost] text-[12.8px] tracking-[2.048px] uppercase text-brown"
-          >
-            Request a consultation
-          </Link>
-        </div>
+        <Reveal immediate delay={440}>
+          <div className="hero__actions">
+            <Link className="btn btn--solid" href="/products">
+              <span>View collections</span>
+            </Link>
+            <Link className="link-underline hero__link" href="/contact">
+              Request a consultation
+            </Link>
+          </div>
+        </Reveal>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-[68px] left-1/2 -translate-x-1/2 flex flex-col items-center gap-[14px]">
-        <span className="font-[Jost] text-[10.6px] tracking-[3.168px] uppercase text-brown-muted">
-          Scroll
-        </span>
-        <span className="w-px h-[48px] bg-gradient-to-b from-brown-muted to-transparent" />
+      <div className="hero__scroll" style={scrollFade}>
+        <Reveal immediate delay={700}>
+          <span>Scroll</span>
+          <span className="hero__scroll-line" />
+        </Reveal>
       </div>
     </section>
   );

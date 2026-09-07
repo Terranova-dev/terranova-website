@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
+import "./fonts.css";
 import "./globals.css";
+import "./sections.css";
 
 export const metadata: Metadata = {
   title: "Terranova — High-End Flooring",
   description:
     "Engineered hardwood, natural stone and marble, seamless microcement and terrazzo — designed and laid by hand for landmark residential, hospitality and commercial spaces.",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
@@ -14,12 +19,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Jost:wght@400;500&family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body>{children}</body>
     </html>
   );
