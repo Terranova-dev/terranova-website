@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Collections", href: "/products" },
-  { label: "Projects", href: "/projects" },
+  { label: "Projects", href: "" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -107,13 +107,13 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
-          <Link
+          {/* <Link
             href="/contact"
             className="nav__link nav__cta"
             onClick={close}
           >
             Enquire
-          </Link>
+          </Link> */}
         </nav>
 
         <button

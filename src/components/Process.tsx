@@ -18,7 +18,7 @@ const steps = [
   },
   {
     no: "04",
-    title: "Precision install",
+    title: "Precision Application",
     text: "Our master installers lay the floor to millimetre tolerances, entirely by hand.",
   },
   {

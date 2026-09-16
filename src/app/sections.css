@@ -382,6 +382,11 @@ h4 {
   gap: 2rem;
 }
 
+.statband__grid--single {
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
 .statband__item {
   text-align: center;
   border-left: 1px solid rgba(236, 228, 212, 0.16);

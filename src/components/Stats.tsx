@@ -11,10 +11,10 @@ type Stat = {
 };
 
 const stats: Stat[] = [
-  { end: 18, label: "Years laying floors" },
-  { end: 1.2, decimals: 1, suffix: "M", label: "Sq ft installed" },
-  { end: 320, label: "Projects delivered" },
-  { end: 40, label: "Master installers" },
+  { end: 12, label: "Years laying floors" },
+  // { end: 1.2, decimals: 1, suffix: "M", label: "Sq ft installed" },
+  // { end: 320, label: "Projects delivered" },
+  // { end: 40, label: "Master installers" },
 ];
 
 function easeOutCubic(t: number) {
@@ -86,9 +86,11 @@ export default function Stats() {
     return () => observer.disconnect();
   }, []);
 
+  const isSingleStat = stats.length === 1;
+
   return (
     <section ref={sectionRef} className="statband dark-section">
-      <div className="container statband__grid">
+      <div className={`container statband__grid ${isSingleStat ? "statband__grid--single" : ""}`}>
         {stats.map((s, i) => (
           <Reveal key={s.label} className="statband__item" delay={i * 100}>
             <span className="statband__value">

@@ -42,7 +42,7 @@ export default function Solutions() {
                 <p className="solution-card__text">{s.text}</p>
                 <Link
                   className="link-underline solution-card__link"
-                  href="/projects"
+                  href=""
                 >
                   See work
                 </Link>
