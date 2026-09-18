@@ -42,10 +42,10 @@ export default function Footer() {
             residential, hospitality and commercial spaces.
           </p>
           <a
-            href="mailto:contact@theterranova.co.in"
+            href="mailto:contact@terranovafinishes.com"
             className="footer__mail link-underline"
           >
-            contact@theterranova.co.in
+            contact@terranovafinishes.com
           </a>
         </Reveal>
 
@@ -84,23 +84,23 @@ export default function Footer() {
           <h4 className="footer__heading">Collections</h4>
           <ul>
             <li>
-              <Link className="footer__link" href="/products#hardwood">
-                Engineered Hardwood
+              <Link className="footer__link" href="/products#microconcrete">
+                Microconcrete
               </Link>
             </li>
             <li>
-              <Link className="footer__link" href="/products#stone-marble">
-                Natural Stone & Marble
+              <Link className="footer__link" href="/products#terranovahard">
+                TerranovaHard
               </Link>
             </li>
             <li>
-              <Link className="footer__link" href="/products#microcement">
-                Microcement
+              <Link className="footer__link" href="/products#hydrobloc-rss">
+                Hydrobloc RSS
               </Link>
             </li>
             <li>
-              <Link className="footer__link" href="/products#terrazzo">
-                Terrazzo
+              <Link className="footer__link" href="/products#terrazova">
+                Terrazova
               </Link>
             </li>
           </ul>

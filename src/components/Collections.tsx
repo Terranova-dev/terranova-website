@@ -4,30 +4,30 @@ import Reveal from "@/components/Reveal";
 const products = [
   {
     index: "01",
-    name: "Engineered Hardwood",
-    tag: "Warmth underfoot",
-    text: "Wide-plank European oak and American walnut, engineered for stability and finished by hand in our atelier.",
-    swatch: "swatch--oak",
-  },
-  {
-    index: "02",
-    name: "Natural Stone & Marble",
-    tag: "Quarried character",
-    text: "Book-matched marble, honed limestone and travertine, selected slab by slab and laid as continuous floors.",
-    swatch: "swatch--marble",
-  },
-  {
-    index: "03",
-    name: "Microcement",
-    tag: "Seamless continuity",
-    text: "A jointless, hand-trowelled cementitious floor, just millimetres thick, with subtle tonal movement.",
+    name: "Microconcrete",
+    tag: "Seamless floors & walls",
+    text: "Raw materials from Europe, finished on site in any colour or texture. Includes Hard Hydrobloc RSS and Waterproof Plasters.",
     swatch: "swatch--cement",
   },
   {
+    index: "02",
+    name: "TerranovaHard",
+    tag: "Waterproof & breathable plaster",
+    text: "A durable, breathable plaster with a refined mineral finish, made for seamless surfaces in your chosen colour and texture.",
+    swatch: "swatch--stone",
+  },
+  {
+    index: "03",
+    name: "Hydrobloc RSS",
+    tag: "Waterproof & breathable plaster",
+    text: "A protective plaster that keeps surfaces waterproof while allowing the substrate to breathe.",
+    swatch: "swatch--marble",
+  },
+  {
     index: "04",
-    name: "Terrazzo",
-    tag: "Crafted aggregate",
-    text: "Poured-in-place terrazzo with hand-selected marble and stone aggregates, ground to a flawless finish on site.",
+    name: "Terrazova",
+    tag: "Surfaces",
+    text: "Surfaces made with aggregates from Italy, composed for your space and finished on site for a precise, seamless result.",
     swatch: "swatch--terrazzo",
   },
 ];
@@ -40,7 +40,7 @@ export default function Collections() {
           <div>
             <span className="eyebrow eyebrow--mark">The Collections</span>
             <h2 className="section-head__title">
-              Four floors, infinitely composed
+              Four surfaces, infinitely composed
             </h2>
           </div>
           <Link className="link-underline" href="/products">

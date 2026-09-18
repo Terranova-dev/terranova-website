@@ -17,10 +17,11 @@ export default function Studio() {
           </Reveal>
           <Reveal delay={220}>
             <p className="intro__text">
-              Terranova is a flooring house working in the finest natural
-              materials — oak and walnut, marble and stone, microcement and
-              terrazzo. From the first drawing to the final seal, one accountable
-              team delivers a floor that is made to measure and built to last.
+              Terranova is a flooring house working with Microconcrete and
+              Terrazova, using raw materials sourced from Europe and aggregates
+              from Italy. From the first drawing to the final seal, one
+              accountable team delivers a surface made to measure and built to
+              last.
             </p>
           </Reveal>
           <Reveal delay={320}>

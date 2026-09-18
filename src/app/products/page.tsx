@@ -6,7 +6,7 @@ import ProductsPage from "@/components/ProductsPage";
 export const metadata: Metadata = {
   title: "Collections — Terranova",
   description:
-    "Four families of flooring — engineered hardwood, natural stone & marble, microcement and terrazzo — sourced and finished by hand.",
+    "Microconcrete, TerranovaHard, Hydrobloc RSS and Terrazova surfaces, sourced and finished by hand for floors and walls.",
 };
 
 export default function Products() {

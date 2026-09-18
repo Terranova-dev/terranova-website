@@ -3,46 +3,47 @@ import Reveal from "@/components/Reveal";
 
 const products = [
   {
-    id: "hardwood",
+    id: "microconcrete",
     index: "01",
-    eyebrow: "Warmth underfoot",
-    title: "Engineered Hardwood",
-    text: "Sourced from sustainably managed forests and milled to order, our hardwood floors arrive pre-finished or site-finished in the tone and sheen you choose. A multi-ply engineered core keeps every plank flat and stable over underfloor heating, while the thick wear layer can be sanded and refreshed for generations.",
-    finishes: ["Natural oil", "Smoked", "Brushed matte"],
-    bestFor: ["Residences", "Hospitality", "Boutiques", "Studies"],
-    swatch: "swatch--oak",
-    reverse: false,
-  },
-  {
-    id: "stone-marble",
-    index: "02",
-    eyebrow: "Quarried character",
-    title: "Natural Stone & Marble",
-    text: "We work directly with quarries in Italy, Turkey and India to hand-select blocks for colour and vein. Slabs are cut, book-matched and finished — honed, polished or leathered — then laid with hairline joints for a floor that reads as one quarried surface.",
-    finishes: ["Honed", "Polished", "Leathered"],
-    bestFor: ["Lobbies", "Bathrooms", "Kitchens", "Retail"],
-    swatch: "swatch--marble",
-    reverse: true,
-  },
-  {
-    id: "microcement",
-    index: "03",
-    eyebrow: "Seamless continuity",
-    title: "Microcement",
-    text: "Applied coat by coat over almost any substrate without demolition, microcement delivers an unbroken, monolithic floor that flows from room to room and up the stairs. Sealed to be water-resistant and hard-wearing, it suits wet rooms and high-traffic spaces alike.",
-    finishes: ["Silk matte", "Natural stone", "Polished sheen"],
-    bestFor: ["Open plan", "Bathrooms", "Stairs", "Commercial"],
+    eyebrow: "Floors, walls & waterproof finishes",
+    title: "Microconcrete",
+    text: "Made from raw materials sourced across Europe, Microconcrete is finished on site in the tone, sheen and texture you choose. It creates a seamless surface across floors and walls, with Hard Hydrobloc RSS and Waterproof Plasters for spaces that demand lasting protection.",
+    finishes: ["Custom colour", "Custom texture", "Site finished"],
+    bestFor: ["Floors", "Walls", "Bathrooms", "Commercial"],
     swatch: "swatch--cement",
     reverse: false,
   },
   {
-    id: "terrazzo",
+    id: "terranovahard",
+    index: "02",
+    eyebrow: "Waterproof & breathable plaster",
+    title: "TerranovaHard",
+    text: "A waterproof and breathable plaster for durable, seamless surfaces with a refined mineral finish. TerranovaHard can be finished on site in the colour and texture chosen for your space.",
+    finishes: ["Waterproof", "Breathable", "Custom colour & texture"],
+    bestFor: ["Floors", "Walls", "Bathrooms", "Commercial"],
+    swatch: "swatch--stone",
+    reverse: true,
+  },
+  {
+    id: "hydrobloc-rss",
+    index: "03",
+    eyebrow: "Waterproof & breathable plaster",
+    title: "Hydrobloc RSS",
+    text: "A waterproof and breathable plaster designed to protect surfaces while allowing the substrate to breathe. It provides a durable finish for interior and exterior applications.",
+    finishes: ["Waterproof", "Breathable", "Site finished"],
+    bestFor: ["Floors", "Walls", "Wet areas", "Commercial"],
+    swatch: "swatch--marble",
+    reverse: false,
+  },
+  {
+    id: "terrazova",
     index: "04",
-    eyebrow: "Crafted aggregate",
-    title: "Terrazzo",
-    text: "Each Terranova terrazzo is mixed to order — the scale, colour and density of the chips composed for the space it will live in. Cast seamlessly and diamond-polished, it is among the most durable decorative floors we make, equally at home in a private villa or a flagship store.",
-    finishes: ["Fine chip", "Venetian", "Bold aggregate"],
-    bestFor: ["Floors", "Stairs", "Lobbies", "Retail"],
+    eyebrow: "Italian aggregate surfaces",
+    title: "Terrazova",
+    text: "Terrazova uses aggregates sourced from Italy to create a surface composed around your space. It is finished on site with a seamless result, with the colour, texture and level of perfection chosen to suit your project.",
+    category: "Surfaces",
+    finishes: ["Italian aggregates", "Custom colour", "Custom texture"],
+    bestFor: ["Floors", "Walls", "Stairs", "Retail"],
     swatch: "swatch--terrazzo",
     reverse: true,
   },
@@ -66,7 +67,7 @@ export default function ProductsPage() {
             </Reveal>
             <Reveal immediate delay={300}>
               <p className="page-hero__intro lead">
-                Four families of flooring, each sourced and finished by hand.
+                Four surface systems, sourced and finished by hand.
                 Colour, tone, plank width and aggregate are composed for your
                 space. These are starting points, not limits.
               </p>

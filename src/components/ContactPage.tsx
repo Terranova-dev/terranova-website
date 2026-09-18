@@ -4,10 +4,10 @@ import { FormEvent, useState } from "react";
 import Reveal from "@/components/Reveal";
 
 const collections = [
-  "Engineered Hardwood",
-  "Natural Stone & Marble",
-  "Microcement",
-  "Terrazzo",
+  "Microconcrete",
+  "TerranovaHard",
+  "Hydrobloc RSS",
+  "Terrazova",
   "Not sure",
 ];
 
@@ -117,10 +117,10 @@ export default function ContactPage() {
             <Reveal className="contact__block" delay={180}>
               <span className="eyebrow eyebrow--mark">Reach us</span>
               <a
-                href="mailto:contact@theterranova.co.in"
+                href="mailto:contact@terranovafinishes.com"
                 className="contact__big-link"
               >
-                contact@theterranova.co.in
+                contact@terranovafinishes.com
               </a>
               <a href="tel:+919159640239" className="contact__big-link">
                 +91 91596 40239

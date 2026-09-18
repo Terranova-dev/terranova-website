@@ -25,16 +25,17 @@ export default function Craft() {
           </Reveal>
           <Reveal delay={260}>
             <p className="about-teaser__text">
-              Our fitters train for years in the slow disciplines of stone,
-              timber and resin. Every floor is surveyed, levelled and laid by the
-              same hands — a level of care that keeps joints hairline-tight and
+              We source raw materials from across Europe and aggregates from
+              Italy. Every surface is surveyed, levelled and finished by the
+              same hands — with precision that keeps joints hairline-tight and
               surfaces dead flat.
             </p>
           </Reveal>
           <Reveal delay={340}>
             <p className="about-teaser__text">
-              The result is a floor with depth and longevity, unique to your
-              space and engineered to live with you for decades.
+              Microconcrete and Terrazova are made for your space, finished on
+              site in the tone and sheen you choose, with a seamless finish in
+              any colour or texture you imagine.
             </p>
           </Reveal>
           <Reveal delay={420}>

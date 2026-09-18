@@ -72,9 +72,8 @@ export default function Hero() {
 
         <Reveal immediate delay={320}>
           <p className="hero__sub">
-            Engineered hardwood, natural stone and marble, seamless microcement
-            and terrazzo — designed and laid by hand for landmark residential,
-            hospitality and commercial spaces.
+            Microconcrete and Terrazova surfaces — sourced and finished by hand
+            for landmark residential, hospitality and commercial spaces.
           </p>
         </Reveal>
 
