@@ -9,7 +9,7 @@ import Craft from "@/components/Craft";
 import WhyTerranova from "@/components/WhyTerranova";
 import SelectedWork from "@/components/SelectedWork";
 import Process from "@/components/Process";
-import Testimonials from "@/components/Testimonials";
+// import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -28,7 +28,7 @@ export default function Home() {
         <WhyTerranova />
         <SelectedWork />
         <Process />
-        <Testimonials />
+        {/* <Testimonials /> */}
         <CTA />
       </main>
       <Footer />

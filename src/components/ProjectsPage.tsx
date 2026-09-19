@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import Reveal from "@/components/Reveal";
 
@@ -17,8 +18,9 @@ type Filter = (typeof filters)[number];
 const projects = [
   {
     name: "Casa Marfil",
-    type: "Private Residence · Custom Terrazova",
+    type: "Private Residence · Custom Terrazzo",
     place: "Goa",
+    image: "/assets/house.png",
     swatch: "swatch--marble",
     category: "Residential" as const,
   },
@@ -26,6 +28,7 @@ const projects = [
     name: "The Wellard",
     type: "Boutique Hotel · Microconcrete walls",
     place: "Mumbai",
+    image: "/assets/bank.png",
     swatch: "swatch--oak",
     category: "Hospitality" as const,
   },
@@ -33,27 +36,31 @@ const projects = [
     name: "The Quiet House",
     type: "Private Villa · Seamless Microconcrete",
     place: "Bengaluru",
+    image: "/assets/image.png",
     swatch: "swatch--cement",
     category: "Residential" as const,
   },
   {
     name: "Sona Café",
-    type: "Café & Restaurant · Italian Terrazova",
+    type: "Café & Restaurant · Italian Terrazzo",
     place: "Hyderabad",
+    image: "/assets/kannur.png",
     swatch: "swatch--terrazzo",
     category: "Hospitality" as const,
   },
   {
     name: "Meridian HQ",
-    type: "Headquarters · Waterproof Plasters",
+    type: "Headquarters · Hydroblock",
     place: "Hyderabad",
+    image: "/assets/image.png",
     swatch: "swatch--stone",
     category: "Workplace" as const,
   },
   {
     name: "Form Gallery",
-    type: "Flagship Retail · Custom Terrazova",
+    type: "Flagship Retail · Custom Terrazzo",
     place: "Delhi",
+    image: "/assets/bank.png",
     swatch: "swatch--walnut",
     category: "Retail" as const,
   },
@@ -116,6 +123,13 @@ export default function ProjectsPage() {
                   <div
                     className={`gallery-card__media swatch ${p.swatch} sheen`}
                   >
+                    <Image
+                      className="project-card__image"
+                      src={p.image}
+                      alt={`${p.name} project exterior`}
+                      fill
+                      sizes="(max-width: 900px) 100vw, 33vw"
+                    />
                     <span className="gallery-card__view">View</span>
                   </div>
                   <div className="gallery-card__meta">

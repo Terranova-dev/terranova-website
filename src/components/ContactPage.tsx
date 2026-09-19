@@ -5,9 +5,9 @@ import Reveal from "@/components/Reveal";
 
 const collections = [
   "Microconcrete",
-  "TerranovaHard",
-  "Hydrobloc RSS",
-  "Terrazova",
+  "Hard",
+  "Hydroblock",
+  "Terrazzo",
   "Not sure",
 ];
 

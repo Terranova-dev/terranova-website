@@ -72,8 +72,9 @@ export default function Hero() {
 
         <Reveal immediate delay={320}>
           <p className="hero__sub">
-            Microconcrete and Terrazova surfaces — sourced and finished by hand
-            for landmark residential, hospitality and commercial spaces.
+            Microconcrete, Hard, Hydroblock and Terrazzo surfaces —
+            sourced and finished by hand for landmark residential, hospitality
+            and commercial spaces.
           </p>
         </Reveal>
 

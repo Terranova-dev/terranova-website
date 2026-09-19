@@ -6,7 +6,7 @@ import "./sections.css";
 export const metadata: Metadata = {
   title: "Terranova — High-End Flooring",
   description:
-    "Microconcrete and Terrazova surfaces, sourced and finished by hand for landmark residential, hospitality and commercial spaces.",
+    "Microconcrete, Hard, Hydroblock and Terrazzo surfaces, sourced and finished by hand for landmark residential, hospitality and commercial spaces.",
   icons: {
     icon: "/icon.svg",
   },

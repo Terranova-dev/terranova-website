@@ -33,7 +33,7 @@ export default function Craft() {
           </Reveal>
           <Reveal delay={340}>
             <p className="about-teaser__text">
-              Microconcrete and Terrazova are made for your space, finished on
+              Microconcrete and Terrazzo are made for your space, finished on
               site in the tone and sheen you choose, with a seamless finish in
               any colour or texture you imagine.
             </p>

@@ -18,7 +18,7 @@ export default function Studio() {
           <Reveal delay={220}>
             <p className="intro__text">
               Terranova is a flooring house working with Microconcrete and
-              Terrazova, using raw materials sourced from Europe and aggregates
+              Terrazzo, using raw materials sourced from Europe and aggregates
               from Italy. From the first drawing to the final seal, one
               accountable team delivers a surface made to measure and built to
               last.

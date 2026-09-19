@@ -6,7 +6,7 @@ import ProductsPage from "@/components/ProductsPage";
 export const metadata: Metadata = {
   title: "Collections — Terranova",
   description:
-    "Microconcrete, TerranovaHard, Hydrobloc RSS and Terrazova surfaces, sourced and finished by hand for floors and walls.",
+    "Microconcrete, Hard, Hydroblock and Terrazzo surfaces, sourced and finished by hand for floors and walls.",
 };
 
 export default function Products() {

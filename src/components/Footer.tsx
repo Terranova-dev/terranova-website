@@ -89,18 +89,18 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link className="footer__link" href="/products#terranovahard">
-                TerranovaHard
+              <Link className="footer__link" href="/products#rrs-hard">
+                Hard
               </Link>
             </li>
             <li>
-              <Link className="footer__link" href="/products#hydrobloc-rss">
-                Hydrobloc RSS
+              <Link className="footer__link" href="/products#rrs-hydrobloc">
+                Hydroblock
               </Link>
             </li>
             <li>
-              <Link className="footer__link" href="/products#terrazova">
-                Terrazova
+              <Link className="footer__link" href="/products#terrazzo">
+                Terrazzo
               </Link>
             </li>
           </ul>

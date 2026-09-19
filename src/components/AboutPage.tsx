@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal";
 import Stats from "@/components/Stats";
 
 const storyParagraphs = [
-  "We are a team of installers, sourcing specialists and designers working with Microconcrete and Terrazova — raw materials sourced from Europe and aggregates from Italy. Every surface is finished on site and laid by our own hands.",
+  "We are a team of installers, sourcing specialists and designers working with Microconcrete and Terrazzo — raw materials sourced from Europe and aggregates from Italy. Every surface is finished on site and laid by our own hands.",
   "Nothing leaves us as a catalogue product. Tone, sheen, plank width and aggregate are composed for the room they will live in — its light, its proportions, the way it will be walked on and used.",
   "The reward is a surface with depth and longevity, finished in the colour and texture that belongs to your space. These are floors and walls meant to be lived on, not replaced.",
 ];
@@ -43,9 +43,9 @@ const values = [
 
 const marqueeItems = [
   "Microconcrete",
-  "Terrazova",
-  "Hard Hydrobloc RSS",
-  "Waterproof Plasters",
+  "Terrazzo",
+  "Hard",
+  "Hydroblock",
 ];
 
 export default function AboutPage() {

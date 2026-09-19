@@ -506,6 +506,8 @@ h4 {
 }
 
 .proj-card__media {
+  position: relative;
+  overflow: hidden;
   aspect-ratio: 4 / 3;
   border-radius: var(--radius);
 }
@@ -1000,6 +1002,16 @@ h4 {
   aspect-ratio: 4 / 5;
   border-radius: var(--radius);
   overflow: hidden;
+}
+
+.project-card__image {
+  object-fit: cover;
+  transition: transform 0.7s var(--ease);
+}
+
+.proj-card__link:hover .project-card__image,
+.gallery-card__link:hover .project-card__image {
+  transform: scale(1.04);
 }
 
 .gallery-card__view {
