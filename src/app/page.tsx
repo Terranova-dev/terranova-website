@@ -7,7 +7,7 @@ import Solutions from "@/components/Solutions";
 import Stats from "@/components/Stats";
 import Craft from "@/components/Craft";
 import WhyTerranova from "@/components/WhyTerranova";
-import SelectedWork from "@/components/SelectedWork";
+// import SelectedWork from "@/components/SelectedWork";
 import Process from "@/components/Process";
 // import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
@@ -26,7 +26,7 @@ export default function Home() {
         <Stats />
         <Craft />
         <WhyTerranova />
-        <SelectedWork />
+        {/* <SelectedWork /> */}
         <Process />
         {/* <Testimonials /> */}
         <CTA />

@@ -90,7 +90,7 @@ export default function Footer() {
             </li>
             <li>
               <Link className="footer__link" href="/products#rrs-hard">
-                Hard
+                Rock
               </Link>
             </li>
             <li>

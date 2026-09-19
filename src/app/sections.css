@@ -1393,7 +1393,7 @@ h4 {
 }
 
 @media (max-width: 860px) {
-  .statband__grid {
+  .statband__grid:not(.statband__grid--single) {
     grid-template-columns: repeat(2, 1fr);
     gap: 2.4rem 1.5rem;
   }
@@ -1574,7 +1574,7 @@ h4 {
     grid-template-columns: 1fr;
   }
 
-  .statband__grid {
+  .statband__grid:not(.statband__grid--single) {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem 1.25rem;
   }
