@@ -109,6 +109,62 @@ function RockDetails() {
   );
 }
 
+function HydroblockDetails() {
+  return (
+    <section className="product-detail" aria-labelledby="hydroblock-details-title">
+      <div className="product-detail__intro">
+        <span className="eyebrow eyebrow--mark">Product information</span>
+        <h3 id="hydroblock-details-title" className="product-detail__title">
+          Hydroblock waterproof and breathable plaster
+        </h3>
+        <p>
+          Hydroblock is a natural, non-toxic and non-synthetic powder additive
+          for mixing with conventional plaster at the construction site.
+          European technology using physical principles changes conventional
+          plaster into a rain-resistant, breathable plaster.
+        </p>
+      </div>
+
+      <div className="product-detail__columns">
+        <div className="product-detail__panel">
+          <h4>Advantages</h4>
+          <ul className="product-detail__list">
+            <li>Excellent workability with minimum waste during application.</li>
+            <li>Excellent adhesion to the substrate.</li>
+            <li>Applicable on damp surfaces.</li>
+            <li>PP fibers help prevent hairline cracks.</li>
+            <li>Highly breathable and allows moisture to evaporate outside the wall.</li>
+            <li>Helps prevent mould and fungi.</li>
+            <li>No additional waterproof membrane or paint is needed.</li>
+          </ul>
+        </div>
+        <div className="product-detail__panel">
+          <h4>Usage</h4>
+          <p className="product-detail__usage-intro">
+            Mix Hydroblock into conventional cement-and-sand plaster at the
+            construction site. Choose the amount according to the surface and
+            exposure it needs to withstand.
+          </p>
+          <ul className="product-detail__list">
+            <li>
+              <strong>Exterior walls:</strong> use 2 kg of Hydroblock with 250
+              kg of plaster and water to create a rain-resistant, breathable
+              plaster for exposed walls.
+            </li>
+            <li>
+              <strong>Interior walls, bathrooms, roof decks and floors:</strong>{" "}
+              use 5 kg of Hydroblock with 250 kg of plaster and water for areas
+              that need increased protection from dampness and water.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      
+    </section>
+  );
+}
+
 export default function ProductsPage() {
   return (
     <>
@@ -181,6 +237,7 @@ export default function ProductsPage() {
                 </div>
               </div>
               {p.id === "rrs-hard" ? <RockDetails /> : null}
+              {p.id === "rrs-hydrobloc" ? <HydroblockDetails /> : null}
             </div>
           ))}
         </div>
