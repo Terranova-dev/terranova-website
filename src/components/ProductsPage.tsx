@@ -52,6 +52,7 @@ const products = [
     finishes: ["Italian aggregates", "Custom colour", "Custom texture"],
     bestFor: ["Floors", "Walls", "Stairs", "Retail"],
     swatch: "swatch--terrazzo",
+    image: "/assets/terrazo.jpg",
     reverse: true,
   },
 ];
@@ -165,6 +166,68 @@ function HydroblockDetails() {
   );
 }
 
+function TerrazzoDetails() {
+  return (
+    <section className="product-detail" aria-labelledby="terrazzo-details-title">
+      <div className="product-detail__intro">
+        <span className="eyebrow eyebrow--mark">Surface information</span>
+        <h3 id="terrazzo-details-title" className="product-detail__title">
+          Terrazzo composed for your space
+        </h3>
+        <p>
+          Terrazzo brings Italian aggregates together in a surface designed
+          around the character of your project. Each composition balances
+          aggregate, colour and scale to create a finish that feels considered
+          rather than repeated.
+        </p>
+        <p>
+          The result is a seamless surface with a distinctive mineral texture,
+          finished on site to suit the light, architecture and level of
+          refinement you want.
+        </p>
+      </div>
+
+      <div className="product-detail__columns">
+        <div className="product-detail__panel">
+          <h4>Surface character</h4>
+          <ul className="product-detail__list">
+            <li>Italian aggregates selected to shape the tone and movement.</li>
+            <li>Custom colour and aggregate combinations for a considered result.</li>
+            <li>Seamless transitions across connected spaces.</li>
+            <li>A site-finished surface with its own subtle variation.</li>
+          </ul>
+        </div>
+        <div className="product-detail__panel">
+          <h4>Suitable for</h4>
+          <ul className="product-detail__list">
+            <li>Floors, walls and staircases.</li>
+            <li>Residential interiors and hospitality spaces.</li>
+            <li>Retail and commercial projects that need a durable visual anchor.</li>
+            <li>Spaces where one continuous material can bring rooms together.</li>
+          </ul>
+        </div>
+      </div>
+{/* 
+      <div className="product-detail__intro product-detail__secondary">
+        <h4>Finishing the surface</h4>
+        <p>
+          We compose the colour, aggregate and texture with your space in mind,
+          then finish the surface on site for a seamless result. The final
+          character can be tuned from quiet and refined to more expressive and
+          aggregate-led.
+        </p>
+        <h4>Care and specification</h4>
+        <p>
+          Terrazzo is specified as part of the wider project, including the
+          substrate, desired finish and how the space will be used. We can guide
+          you through samples and recommend the right finish for your room,
+          light and level of traffic.
+        </p>
+      </div> */}
+    </section>
+  );
+}
+
 export default function ProductsPage() {
   return (
     <>
@@ -201,7 +264,18 @@ export default function ProductsPage() {
                 className={`product-row${p.reverse ? " product-row--rev" : ""}`}
               >
                 <Reveal className="product-row__media" delay={60}>
-                  <div className={`swatch ${p.swatch} sheen product-row__img`}>
+                  <div
+                    className={`swatch ${p.swatch} sheen product-row__img`}
+                    style={
+                      p.image
+                        ? {
+                            backgroundImage: `url("${p.image}")`,
+                            backgroundPosition: "center",
+                            backgroundSize: "cover",
+                          }
+                        : undefined
+                    }
+                  >
                     <span className="product-row__index">{p.index}</span>
                   </div>
                 </Reveal>
@@ -238,6 +312,7 @@ export default function ProductsPage() {
               </div>
               {p.id === "rrs-hard" ? <RockDetails /> : null}
               {p.id === "rrs-hydrobloc" ? <HydroblockDetails /> : null}
+              {p.id === "terrazzo" ? <TerrazzoDetails /> : null}
             </div>
           ))}
         </div>
