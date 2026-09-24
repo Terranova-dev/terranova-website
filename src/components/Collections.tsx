@@ -8,6 +8,7 @@ const products = [
     tag: "Seamless floors & walls",
     text: "Raw materials sourced from Europe, site-finished in the tone and sheen you choose, levelled to perfection with a seamless finish in any colour or texture.",
     swatch: "swatch--cement",
+    image: "/assets/microconcrete.jpg",
   },
   {
     index: "02",
@@ -15,6 +16,7 @@ const products = [
     tag: "Waterproof & breathable plaster",
     text: "A durable, breathable plaster with a refined mineral finish, made for seamless surfaces in your chosen colour and texture.",
     swatch: "swatch--stone",
+    image: "/assets/rock.jpg",
   },
   {
     index: "03",
@@ -22,6 +24,7 @@ const products = [
     tag: "Waterproof & breathable plaster",
     text: "A protective plaster that keeps surfaces waterproof while allowing the substrate to breathe.",
     swatch: "swatch--marble",
+    image: "/assets/hydroblock.jpg",
   },
   {
     index: "04",
@@ -29,6 +32,7 @@ const products = [
     tag: "Surfaces",
     text: "Surfaces made with aggregates from Italy, composed for your space and finished on site for a precise, seamless result.",
     swatch: "swatch--terrazzo",
+    image: "/assets/terrazo.jpg",
   },
 ];
 
@@ -52,8 +56,14 @@ export default function Collections() {
           {products.map((p, i) => (
             <Reveal key={p.index} className="product-card lift" delay={i * 100}>
               <Link className="product-card__link" href="/products">
-                <div className={`product-card__media swatch ${p.swatch} sheen`}>
+                <div className="product-card__media">
                   <span className="product-card__index">{p.index}</span>
+                  <img
+                    className="product-card__image"
+                    src={p.image}
+                    alt={p.name}
+                    loading="lazy"
+                  />
                 </div>
                 <div className="product-card__info">
                   <div className="product-card__head">

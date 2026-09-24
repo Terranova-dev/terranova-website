@@ -18,6 +18,7 @@ const products = [
     ],
     bestFor: ["Floors", "Walls", "Bathrooms", "Commercial"],
     swatch: "swatch--cement",
+    image: "/assets/microconcrete.jpg",
     reverse: false,
   },
   {
@@ -29,6 +30,7 @@ const products = [
     finishes: ["Waterproof", "Breathable", "Custom colour & texture"],
     bestFor: ["Floors", "Walls", "Bathrooms", "Commercial"],
     swatch: "swatch--stone",
+    image: "/assets/rock.jpg",
     reverse: true,
   },
   {
@@ -40,6 +42,7 @@ const products = [
     finishes: ["Waterproof", "Breathable", "Site finished"],
     bestFor: ["Floors", "Walls", "Wet areas", "Commercial"],
     swatch: "swatch--marble",
+    image: "/assets/hydroblock.jpg",
     reverse: false,
   },
   {
