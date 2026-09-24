@@ -105,68 +105,6 @@ function RockDetails() {
           </ul>
         </div>
       </div>
-
-      <div className="product-detail__content">
-        <div>
-          <span className="eyebrow">Application details</span>
-          <h4>Surface preparation</h4>
-          <p>
-            The ground must be solid and released from loose parts and
-            paintings. It must not be greasy, acidic, water-repellent or
-            alcohol-based. The surface must be totally wetted with water
-            before application.
-          </p>
-          <h4>Preparing the mixture</h4>
-          <p>
-            Add 3.75-4.75 litres of water to one 25 kg bag. Mix or stir for
-            5-10 minutes, let the material stand for 5 minutes, then mix for
-            a final minute before applying. Work up mixed material within 3
-            hours. An electrically powered mixing tool is recommended.
-          </p>
-          <h4>Laying and finishing</h4>
-          <p>
-            Apply manually with a smoother or with a spray applicator, in a
-            maximum of three layers. Each layer is typically 10-15 mm, with
-            up to 30 mm total thickness. Slightly roughen each layer before
-            applying the next one after 24 hours.
-          </p>
-          <h4>Care after application</h4>
-          <p>
-            Prevent the plaster from drying too quickly. After the final
-            layer, slightly moisten the surface for 3 days, especially in dry,
-            windy weather or direct sunshine. The finished layer can be
-            painted or faced with tiles after final roughening.
-          </p>
-          <div className="product-detail__note">
-            <strong>Important</strong>
-            <p>
-              On extremely moist brickwork, water drops can appear on the
-              plaster surface. This is water being forced out of the wall and
-              the drops disappear as the plaster hardens.
-            </p>
-          </div>
-          <h4>Cleaning</h4>
-          <p>
-            Use clear water to clean plaster from tools and equipment.
-            Hardened material can only be removed mechanically.
-          </p>
-        </div>
-
-        <div>
-          <span className="eyebrow">Technical specification</span>
-          <dl className="product-detail__spec-table">
-            <div><dt>Appearance / colour</dt><dd>Powder / grey</dd></div>
-            <div><dt>Chemical base</dt><dd>Sand, cement, IzoComponent HARD</dd></div>
-            <div><dt>Density of hardened mortar</dt><dd>1680 kg/m3 +/- 50 kg</dd></div>
-            <div><dt>Layer thickness</dt><dd>One layer: 10-15 mm. Maximum three layers, 30 mm total.</dd></div>
-            <div><dt>Consumption</dt><dd>12 kg/m2 at 10 mm; 18 kg/m2 at 15 mm. A 25 kg bag covers 2.08 m2 at 10 mm or 1.38 m2 at 15 mm.</dd></div>
-            <div><dt>Packaging</dt><dd>25 kg bag</dd></div>
-            <div><dt>Shelf-life</dt><dd>18 months when stored in dry conditions</dd></div>
-            <div><dt>Water penetration</dt><dd>&lt;= 1 mm</dd></div>
-            <div><dt>Water vapour resistance coefficient (mu)</dt><dd>12.40</dd></div>
-          </dl>
-        </div>
-      </div>
     </section>
   );
 }

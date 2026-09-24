@@ -875,7 +875,6 @@ h4 {
   gap: clamp(2rem, 6vw, 5rem);
   align-items: center;
   padding-block: clamp(3rem, 7vw, 6rem);
-  border-bottom: 1px solid var(--line);
 }
 
 .product-row:first-child {
@@ -953,8 +952,7 @@ h4 {
 }
 
 .product-detail {
-  padding-block: clamp(3.5rem, 7vw, 6rem);
-  border-bottom: 1px solid var(--line);
+  padding-block: clamp(2rem, 4vw, 3rem);
 }
 
 .product-detail__intro {
@@ -966,8 +964,7 @@ h4 {
   font-size: clamp(1.8rem, 3vw, 2.7rem);
 }
 
-.product-detail__intro p,
-.product-detail__content p {
+.product-detail__intro p {
   margin-top: 1rem;
   max-width: 72ch;
   line-height: 1.8;
@@ -986,22 +983,16 @@ h4 {
   border: 1px solid var(--line);
 }
 
-.product-detail__panel h4,
-.product-detail__content h4 {
-  margin-top: 1.8rem;
-  color: var(--gold-deep);
-  font-family: var(--font-sans);
-  font-size: 1.05rem;
-  font-weight: 500;
-}
-
 .product-detail__panel h4 {
   margin-top: 0;
   padding-bottom: 0.7rem;
   border-bottom: 1px solid var(--line);
+  color: var(--gold-deep);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  font-size: 0.8rem;
 }
 
 .product-detail__list {
@@ -1018,63 +1009,6 @@ h4 {
 
 .product-detail__list li::marker {
   color: var(--gold);
-}
-
-.product-detail__content {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(20rem, 0.9fr);
-  gap: clamp(2rem, 6vw, 5rem);
-  margin-top: 4rem;
-}
-
-.product-detail__content > div > .eyebrow {
-  display: block;
-  margin-bottom: 1.2rem;
-}
-
-.product-detail__note {
-  margin-top: 1.8rem;
-  padding: 1rem 1.2rem;
-  background: var(--surface);
-  border: 1px solid var(--gold-soft);
-  border-left: 4px solid var(--gold);
-}
-
-.product-detail__note strong {
-  color: var(--gold-deep);
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 500;
-}
-
-.product-detail__note p {
-  margin-top: 0.25rem;
-}
-
-.product-detail__spec-table {
-  margin-top: 0.4rem;
-  border-top: 2px solid var(--dark);
-}
-
-.product-detail__spec-table > div {
-  display: grid;
-  grid-template-columns: minmax(9rem, 0.8fr) 1.2fr;
-  gap: 1rem;
-  padding: 0.85rem 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.product-detail__spec-table dt,
-.product-detail__spec-table dd {
-  line-height: 1.5;
-}
-
-.product-detail__spec-table dt {
-  color: var(--muted);
-}
-
-.product-detail__spec-table dd {
-  color: var(--text);
 }
 
 /* —— Projects page —— */
@@ -1658,13 +1592,8 @@ h4 {
     gap: 1.25rem 1.5rem;
   }
 
-  .product-detail__columns,
-  .product-detail__content {
+  .product-detail__columns {
     grid-template-columns: 1fr;
-  }
-
-  .product-detail__content {
-    gap: 3rem;
   }
 }
 
