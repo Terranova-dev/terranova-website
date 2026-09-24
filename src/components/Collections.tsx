@@ -11,7 +11,7 @@ const products = [
   },
   {
     index: "02",
-    name: "Hard",
+    name: "Rock",
     tag: "Waterproof & breathable plaster",
     text: "A durable, breathable plaster with a refined mineral finish, made for seamless surfaces in your chosen colour and texture.",
     swatch: "swatch--stone",
