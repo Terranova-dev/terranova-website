@@ -345,6 +345,7 @@ h4 {
 
 .solution-card__media {
   aspect-ratio: 4 / 3;
+  height: auto;
 }
 
 .solution-card__body {
