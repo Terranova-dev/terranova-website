@@ -48,7 +48,7 @@ export default function Solutions() {
                   backgroundSize: "cover",
                 }}
               />
-              <div className="solution-card__body">
+              <div className="solution-card__body swatch swatch--charcoal">
                 <h3 className="solution-card__name">{s.name}</h3>
                 <p className="solution-card__text">{s.text}</p>
                 <Link

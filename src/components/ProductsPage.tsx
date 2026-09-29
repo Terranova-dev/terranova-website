@@ -113,6 +113,51 @@ function RockDetails() {
   );
 }
 
+function MicroconcreteDetails() {
+  return (
+    <section className="product-detail" aria-labelledby="microconcrete-details-title">
+      <div className="product-detail__intro">
+        <span className="eyebrow eyebrow--mark">Product information</span>
+        <h3 id="microconcrete-details-title" className="product-detail__title">
+          Microconcrete finished for your space
+        </h3>
+        <p>
+          Microconcrete is applied coat by coat over almost any prepared
+          substrate, creating a seamless surface without the need for
+          demolition. Each layer is finished on site to build the tone,
+          texture and level of sheen you want.
+        </p>
+        <p>
+          Once sealed, it is water-resistant and hard-wearing enough for wet
+          rooms, high-traffic areas and continuous floors that flow from room
+          to room and up the stairs.
+        </p>
+      </div>
+
+      <div className="product-detail__columns">
+        <div className="product-detail__panel">
+          <h4>Finishing options</h4>
+          <ul className="product-detail__list">
+            <li>Natural, satin, glassy or textured finishes.</li>
+            <li>Custom colours and tonal variations.</li>
+            <li>Layered applications for added depth.</li>
+            <li>Grooves and detailed transitions where required.</li>
+          </ul>
+        </div>
+        <div className="product-detail__panel">
+          <h4>Suitable for</h4>
+          <ul className="product-detail__list">
+            <li>Floors, walls, bathrooms and wet rooms.</li>
+            <li>Stairs and connected spaces.</li>
+            <li>Residential and high-traffic commercial interiors.</li>
+            <li>Projects that need one continuous surface.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function HydroblockDetails() {
   return (
     <section className="product-detail" aria-labelledby="hydroblock-details-title">
@@ -314,6 +359,7 @@ export default function ProductsPage() {
                 </div>
               </div>
               {p.id === "rrs-hard" ? <RockDetails /> : null}
+              {p.id === "microconcrete" ? <MicroconcreteDetails /> : null}
               {p.id === "rrs-hydrobloc" ? <HydroblockDetails /> : null}
               {p.id === "terrazzo" ? <TerrazzoDetails /> : null}
             </div>

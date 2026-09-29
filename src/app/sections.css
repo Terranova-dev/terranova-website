@@ -314,6 +314,22 @@ h4 {
   padding-top: 1.5rem;
 }
 
+.product-card__meta {
+  padding: 1.25rem 1.4rem 1.35rem;
+  background: var(--dark);
+}
+
+.product-card__meta.swatch--charcoal {
+  background:
+    radial-gradient(120% 90% at 30% 15%, #34322b 0%, transparent 55%),
+    linear-gradient(135deg, #26241e, #131210);
+}
+
+.product-card__meta > * {
+  position: relative;
+  z-index: 1;
+}
+
 .product-card__head {
   display: flex;
   align-items: center;
@@ -323,11 +339,12 @@ h4 {
 .product-card__name {
   font-size: clamp(1.5rem, 3vw, 2.2rem);
   font-weight: 500;
+  color: var(--on-dark);
 }
 
 .product-card__arrow {
   font-size: 1.4rem;
-  color: var(--clay);
+  color: var(--gold-soft);
   transition: transform 0.5s var(--ease);
 }
 
@@ -341,7 +358,7 @@ h4 {
   font-size: 0.74rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--clay-deep);
+  color: var(--gold-soft);
 }
 
 .product-card__text {
@@ -376,11 +393,18 @@ h4 {
   display: flex;
   flex-direction: column;
   flex: 1;
+  height: auto;
+}
+
+.solution-card__body > * {
+  position: relative;
+  z-index: 1;
 }
 
 .solution-card__name {
   font-size: 1.3rem;
   font-weight: 500;
+  color: var(--on-dark);
 }
 
 .solution-card__text {
@@ -388,11 +412,12 @@ h4 {
   font-size: 0.92rem;
   line-height: 1.65;
   flex: 1;
+  color: var(--on-dark-muted);
 }
 
 .solution-card__link {
   margin-top: 1.3rem;
-  color: var(--gold-deep);
+  color: var(--gold-soft);
 }
 
 /* Stat band */

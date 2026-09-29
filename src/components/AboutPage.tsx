@@ -44,7 +44,7 @@ const values = [
 const marqueeItems = [
   "Microconcrete",
   "Terrazzo",
-  "Hard",
+  "Rock",
   "Hydroblock",
 ];
 
