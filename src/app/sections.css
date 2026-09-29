@@ -319,12 +319,6 @@ h4 {
   background: var(--dark);
 }
 
-.product-card__meta.swatch--charcoal {
-  background:
-    radial-gradient(120% 90% at 30% 15%, #34322b 0%, transparent 55%),
-    linear-gradient(135deg, #26241e, #131210);
-}
-
 .product-card__meta > * {
   position: relative;
   z-index: 1;
@@ -394,6 +388,7 @@ h4 {
   flex-direction: column;
   flex: 1;
   height: auto;
+  background: var(--dark);
 }
 
 .solution-card__body > * {

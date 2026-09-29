@@ -66,7 +66,7 @@ export default function Collections() {
                   />
                 </div>
                 <div className="product-card__info">
-                  <div className="product-card__meta swatch swatch--charcoal">
+                  <div className="product-card__meta">
                     <div className="product-card__head">
                       <h3 className="product-card__name">{p.name}</h3>
                       <span className="product-card__arrow">→</span>
