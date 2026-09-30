@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Terranova — Spaces</title>
+
+<style>
+
+/* =========================================================
+   TERRANOVA
+   ========================================================= */
+
+:root {
+    --cream: #f4efe6;
+    --cream-2: #eee7db;
+    --black: #171612;
+    --gold: #ad8b51;
+    --gold-light: #e2c98e;
+    --white: #f8f3e9;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--cream);
+    color: var(--black);
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.page {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 70%,
+            rgba(255,255,255,.95),
+            transparent 58%
+        ),
+        var(--cream);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+    height: 92px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 4.2vw;
+
+    border-bottom: 1px solid rgba(30,25,18,.05);
+}
+
+.logo {
+    font-family: Georgia, serif;
+
+    font-size: 29px;
+    font-weight: 400;
+
+    letter-spacing: 9px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.nav a {
+    color: var(--black);
+
+    text-decoration: none;
+
+    font-family: Georgia, serif;
+    font-size: 14px;
+}
+
+.nav a:first-child {
+    position: relative;
+}
+
+.nav a:first-child::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: -20px;
+
+    height: 2px;
+
+    background: var(--gold);
+}
+
+.contact {
+    border: 1px solid rgba(173,139,81,.75);
+
+    padding: 14px 28px;
+
+    font-family: Arial !important;
+    font-size: 10px !important;
+
+    letter-spacing: 2.5px;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    position: relative;
+
+    padding: 42px 4.6vw 0;
+
+    z-index: 20;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+
+    color: var(--gold);
+
+    text-transform: uppercase;
+
+    letter-spacing: 5px;
+
+    font-size: 12px;
+}
+
+.eyebrow::before {
+    content: "";
+
+    width: 58px;
+    height: 1px;
+
+    background: var(--gold);
+}
+
+.hero h1 {
+    margin-top: 14px;
+
+    max-width: 560px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(72px, 7vw, 108px);
+
+    font-weight: 400;
+
+    line-height: .88;
+
+    letter-spacing: -4px;
+}
+
+.hero-copy {
+    position: absolute;
+
+    top: 32px;
+    right: 4.5vw;
+
+    width: 330px;
+
+    color: #716b61;
+
+    text-align: right;
+
+    font-family: Georgia, serif;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+}
+
+.explore {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    margin-top: 22px;
+
+    color: var(--gold);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    text-decoration: none;
+}
+
+.explore span {
+    color: var(--black);
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   CARD AREA
+   ========================================================= */
+
+.showcase {
+    height: 650px;
+
+    position: relative;
+
+    margin-top: -10px;
+
+    perspective: 1600px;
+}
+
+
+/* =========================================================
+   DECORATIVE CURVES
+   ========================================================= */
+
+.curve {
+    position: absolute;
+
+    left: 50%;
+    top: 45%;
+
+    width: 1050px;
+    height: 520px;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-2deg);
+
+    border: 1px solid rgba(173,139,81,.18);
+
+    border-radius:
+        48% 52% 50% 50%
+        /
+        55% 44% 56% 45%;
+
+    pointer-events: none;
+}
+
+.curve::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 32px;
+
+    border: 1px solid rgba(173,139,81,.11);
+
+    border-radius: inherit;
+}
+
+
+/* =========================================================
+   CARD STACK
+   ========================================================= */
+
+.cards {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* =========================================================
+   ORGANIC CARD
+   ========================================================= */
+
+.card {
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    overflow: visible;
+
+    transition:
+        transform 900ms cubic-bezier(.22,.61,.36,1),
+        opacity 900ms ease,
+        filter 900ms ease;
+
+    transform-style: preserve-3d;
+}
+
+
+/*
+   IMPORTANT:
+
+   This is the actual reference shape.
+
+   Instead of border-radius, the card is clipped
+   with an organic SVG path.
+*/
+
+.card-shape {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    clip-path: url(#organicCard);
+}
+
+
+/* =========================================================
+   CARD IMAGE
+   ========================================================= */
+
+.card-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transform: scale(1.02);
+
+    transition: transform 1.2s ease;
+}
+
+
+/* =========================================================
+   IMAGE DARK GRADIENT
+   ========================================================= */
+
+.card-gradient {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+
+            rgba(0,0,0,.02) 25%,
+
+            rgba(0,0,0,.05) 40%,
+
+            rgba(10,9,7,.18) 52%,
+
+            rgba(10,9,7,.74) 73%,
+
+            rgba(10,9,7,.98) 100%
+        );
+}
+
+
+/* =========================================================
+   GLOW BORDER
+   ========================================================= */
+
+.card-glow {
+
+    position: absolute;
+
+    inset: -5px;
+
+    z-index: -1;
+
+    clip-path: url(#organicCard);
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(255,255,255,.8),
+            var(--gold-light) 30%,
+            rgba(255,255,255,.9) 55%,
+            var(--gold) 78%,
+            rgba(255,255,255,.7)
+        );
+
+    filter: blur(7px);
+
+    opacity: 0;
+
+    transition: opacity 700ms ease;
+}
+
+
+/* =========================================================
+   SHARP BORDER
+   ========================================================= */
+
+.card-border {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 10;
+
+    pointer-events: none;
+
+    clip-path: url(#organicCard);
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255,240,204,.85);
+}
+
+
+/* =========================================================
+   ACTIVE CARD
+   ========================================================= */
+
+.card.active {
+
+    z-index: 10;
+
+    transform:
+        translate3d(0,0,80px)
+        scale(1);
+}
+
+.card.active .card-glow {
+    opacity: 1;
+}
+
+.card.active .card-image {
+    transform: scale(1);
+}
+
+
+/* =========================================================
+   LEFT CARD
+   ========================================================= */
+
+.card.left {
+
+    z-index: 2;
+
+    transform:
+        translate3d(-480px,35px,-180px)
+        rotateY(10deg)
+        scale(.70);
+
+    filter:
+        blur(7px)
+        saturate(.65);
+
+    opacity: .48;
+}
+
+
+/* =========================================================
+   RIGHT CARD
+   ========================================================= */
+
+.card.right {
+
+    z-index: 2;
+
+    transform:
+        translate3d(480px,35px,-180px)
+        rotateY(-10deg)
+        scale(.70);
+
+    filter:
+        blur(7px)
+        saturate(.65);
+
+    opacity: .48;
+}
+
+
+/* =========================================================
+   CARD TEXT
+   ========================================================= */
+
+.card-content {
+
+    position: absolute;
+
+    left: 62px;
+    right: 62px;
+    bottom: 52px;
+
+    z-index: 5;
+
+    color: var(--white);
+}
+
+.category {
+
+    color: var(--gold-light);
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    font-size: 10px;
+
+    margin-bottom: 14px;
+}
+
+.card-title {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 43px;
+
+    line-height: 1;
+
+    font-weight: 400;
+
+    margin-bottom: 17px;
+}
+
+.description {
+
+    max-width: 430px;
+
+    font-family: Georgia, serif;
+
+    color: #d7cfc0;
+
+    font-size: 16px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   CARD BOTTOM
+   ========================================================= */
+
+.card-bottom {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 26px;
+
+    max-width: 490px;
+}
+
+.see-work {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    color: var(--gold-light);
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+}
+
+.arrow {
+
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid rgba(225,201,153,.8);
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+    font-size: 17px;
+
+    letter-spacing: 0;
+}
+
+.features {
+
+    padding-left: 20px;
+
+    border-left:
+        1px solid
+        rgba(225,201,153,.55);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    color: #a99c87;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   INDEX
+   ========================================================= */
+
+.index {
+
+    position: absolute;
+
+    top: 48px;
+    left: 52px;
+
+    z-index: 8;
+
+    color: white;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.index::after {
+
+    content: "";
+
+    width: 55px;
+    height: 1px;
+
+    background: rgba(255,255,255,.7);
+}
+
+
+/* =========================================================
+   TOP PILL
+   ========================================================= */
+
+.card-pill {
+
+    position: absolute;
+
+    right: 65px;
+    top: 58px;
+
+    z-index: 8;
+
+    padding: 14px 22px;
+
+    border-radius: 50px;
+
+    background:
+        rgba(248,242,229,.92);
+
+    color: #302b23;
+
+    font-family: Georgia, serif;
+
+    font-size: 14px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.08);
+}
+
+.card-pill::after {
+
+    content: "";
+
+    display: inline-block;
+
+    width: 8px;
+    height: 8px;
+
+    margin-left: 14px;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+}
+
+
+/* =========================================================
+   REFLECTION
+   ========================================================= */
+
+.reflection {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 35px;
+
+    width: 700px;
+    height: 100px;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(173,139,81,.25),
+            transparent 70%
+        );
+
+    filter: blur(25px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTROLS
+   ========================================================= */
+
+.controls {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    z-index: 50;
+}
+
+.control {
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(173,139,81,.5);
+
+    background: rgba(244,239,230,.55);
+
+    color: var(--black);
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    backdrop-filter: blur(10px);
+}
+
+.dots {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.dot {
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #c9bfae;
+
+    transition: .4s ease;
+}
+
+.dot.active {
+
+    width: 24px;
+
+    border-radius: 10px;
+
+    background: var(--gold);
+}
+
+
+/* =========================================================
+   SVG
+   ========================================================= */
+
+.svg-defs {
+    position: absolute;
+
+    width: 0;
+    height: 0;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .card {
+        width: 540px;
+        height: 560px;
+    }
+
+    .card.left {
+        transform:
+            translate3d(-390px,35px,-180px)
+            rotateY(10deg)
+            scale(.68);
+    }
+
+    .card.right {
+        transform:
+            translate3d(390px,35px,-180px)
+            rotateY(-10deg)
+            scale(.68);
+    }
+
+    .hero h1 {
+        font-size: 75px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     SVG SHAPE DEFINITION
+
+     THIS IS THE IMPORTANT PART.
+     ===================================================== -->
+
+<svg class="svg-defs">
+
+    <defs>
+
+        <clipPath
+            id="organicCard"
+            clipPathUnits="objectBoundingBox"
+        >
+
+            <!--
+              Custom organic Terranova silhouette.
+
+              Top:
+              flowing wave
+
+              Left:
+              softly curved
+
+              Right:
+              slightly organic
+
+              Bottom:
+              subtle concave wave
+            -->
+
+            <path
+                d="
+                M
+                0.105,0.075
+
+                C
+                0.20,0.025
+                0.30,0.055
+                0.40,0.105
+
+                C
+                0.52,0.165
+                0.61,0.165
+                0.70,0.115
+
+                C
+                0.79,0.065
+                0.88,0.075
+                0.91,0.145
+
+                C
+                0.95,0.25
+                0.94,0.38
+                0.95,0.52
+
+                C
+                0.96,0.68
+                0.94,0.82
+                0.88,0.91
+
+                C
+                0.81,0.99
+                0.70,0.965
+                0.61,0.93
+
+                C
+                0.50,0.89
+                0.39,0.89
+                0.28,0.93
+
+                C
+                0.18,0.97
+                0.08,0.94
+                0.06,0.85
+
+                C
+                0.03,0.72
+                0.06,0.58
+                0.055,0.43
+
+                C
+                0.05,0.28
+                0.055,0.15
+                0.105,0.075
+
+                Z
+                "
+            />
+
+        </clipPath>
+
+    </defs>
+
+</svg>
+
+
+<div class="page">
+
+
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
+
+<header class="header">
+
+    <div class="logo">
+        TERRANOVA
+    </div>
+
+
+    <nav class="nav">
+
+        <a href="#">Spaces</a>
+
+        <a href="#">Collections</a>
+
+        <a href="#">Materials</a>
+
+        <a href="#">About</a>
+
+        <a href="#">⌕</a>
+
+        <a
+            href="#"
+            class="contact"
+        >
+            CONTACT US ↗
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
+<section class="hero">
+
+    <div class="eyebrow">
+        Solutions by Space
+    </div>
+
+
+    <h1>
+        Floors for<br>
+        every brief
+    </h1>
+
+
+    <div class="hero-copy">
+
+        Distinct spaces. Demanding needs.<br>
+
+        Our floors combine timeless beauty
+        with lasting performance —
+        for spaces that matter.
+
+        <br>
+
+        <a
+            href="#"
+            class="explore"
+        >
+            EXPLORE ALL SPACES
+            <span>→</span>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SHOWCASE
+     ===================================================== -->
+
+<section class="showcase">
+
+
+    <div class="curve"></div>
+
+
+    <div class="reflection"></div>
+
+
+    <div class="cards">
+
+
+        <!-- =================================================
+             CENTER CARD
+             ================================================= -->
+
+        <article class="card active">
+
+            <div class="card-glow"></div>
+
+
+            <div class="card-shape">
+
+                <img
+                    class="card-image"
+                    src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=90"
+                />
+
+
+                <div class="card-gradient"></div>
+
+
+                <div class="card-border"></div>
+
+
+                <div class="index">
+                    01 / 03
+                </div>
+
+
+                <div class="card-pill">
+                    Private Residences
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="category">
+                        Private Residences
+                    </div>
+
+
+                    <h2 class="card-title">
+                        Private Residences
+                    </h2>
+
+
+                    <p class="description">
+                        Floors that anchor a home —
+                        quiet, tactile and made to
+                        live with for decades.
+                    </p>
+
+
+                    <div class="card-bottom">
+
+                        <div class="see-work">
+
+                            SEE WORK
+
+                            <span class="arrow">
+                                ↗
+                            </span>
+
+                        </div>
+
+
+                        <div class="features">
+
+                            <span>Timeless</span>
+                            <span>Natural</span>
+                            <span>Personal</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             LEFT CARD
+             ================================================= -->
+
+        <article class="card left">
+
+            <div class="card-shape">
+
+                <img
+                    class="card-image"
+                    src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=90"
+                />
+
+
+                <div class="card-gradient"></div>
+
+
+                <div class="index">
+                    03 / 03
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="category">
+                        Commercial Spaces
+                    </div>
+
+                    <h2 class="card-title">
+                        Commercial Spaces
+                    </h2>
+
+                    <p class="description">
+                        High-performance floors for
+                        evolving workplaces, retail
+                        and public environments.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             RIGHT CARD
+             ================================================= -->
+
+        <article class="card right">
+
+            <div class="card-shape">
+
+                <img
+                    class="card-image"
+                    src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1600&q=90"
+                />
+
+
+                <div class="card-gradient"></div>
+
+
+                <div class="index">
+                    02 / 03
+                </div>
+
+
+                <div class="card-content">
+
+                    <div class="category">
+                        Hospitality
+                    </div>
+
+                    <h2 class="card-title">
+                        Hospitality
+                    </h2>
+
+                    <p class="description">
+                        Inviting floors for extraordinary
+                        guest experiences — where design
+                        meets durability.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+    <!-- =================================================
+         CONTROLS
+         ================================================= -->
+
+    <div class="controls">
+
+        <button class="control">
+            ←
+        </button>
+
+
+        <div class="dots">
+
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+
+        </div>
+
+
+        <button class="control">
+            →
+        </button>
+
+    </div>
+
+</section>
+
+</div>
+
+</body>
+</html>
