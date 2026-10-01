@@ -71,7 +71,7 @@ export default function Solutions() {
           </Reveal>
           <Reveal className="solutions__aside" delay={100}>
             <p>Distinct spaces. Demanding needs. Our floors bring lasting performance to places that matter.</p>
-            <Link className="solutions__explore" href="/projects">
+            <Link className="solutions__explore" href="">
               Explore all spaces <span aria-hidden="true">→</span>
             </Link>
           </Reveal>
@@ -129,7 +129,7 @@ export default function Solutions() {
                       <div className="solution-card__copy">
                         <h3 className="solution-card__name">{solution.name}</h3>
                         <p className="solution-card__text">{solution.text}</p>
-                        <Link className="solution-card__link" href="/projects">
+                        <Link className="solution-card__link" href="">
                           See work <span aria-hidden="true">↗</span>
                         </Link>
                       </div>
