@@ -9,29 +9,25 @@ const solutions = [
     name: "Private Residences",
     text: "Floors that anchor a home — quiet, tactile and made to live with for decades.",
     image: "/assets/private.jpg",
-    badge: "Private Residences",
-    qualities: ["Timeless", "Natural", "Personal"],
+    badge: "Private Residences"
   },
   {
     name: "Hospitality",
     text: "Hardwearing, photogenic surfaces for hotels, spas and restaurants that never stop moving.",
     image: "/assets/hospitality.jpg",
-    badge: "Hotels & Retreats",
-    qualities: ["Welcoming", "Resilient", "Distinctive"],
+    badge: "Hotels & Retreats"
   },
   {
     name: "Workplace & Commercial",
     text: "Seamless, durable floors engineered for footfall, acoustics and a considered first impression.",
     image: "/assets/workplace.jpg",
-    badge: "Workplace",
-    qualities: ["Considered", "Durable", "Quiet"],
+    badge: "Workplace"
   },
   {
     name: "Retail & Galleries",
     text: "Distinctive floors that frame the product and define a flagship’s sense of place.",
     image: "/assets/retail.jpg",
-    badge: "Retail & Culture",
-    qualities: ["Expressive", "Tactile", "Purposeful"],
+    badge: "Retail & Culture"
   },
 ];
 
@@ -44,7 +40,7 @@ export default function Solutions() {
 
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % solutions.length);
-    }, 6200);
+    }, 4000);
 
     return () => window.clearInterval(timer);
   }, [paused]);
@@ -133,9 +129,6 @@ export default function Solutions() {
                           See work <span aria-hidden="true">↗</span>
                         </Link>
                       </div>
-                      <ul className="solution-card__qualities" aria-label="Floor qualities">
-                        {solution.qualities.map((quality) => <li key={quality}>{quality}</li>)}
-                      </ul>
                     </div>
                   </div>
                 </article>
