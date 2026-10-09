@@ -502,14 +502,14 @@ h4 {
   color: var(--on-dark);
   transform-style: preserve-3d;
   transition:
-    left 4s var(--ease),
-    right 4s var(--ease),
-    top 4s var(--ease),
-    width 4s var(--ease),
-    height 4s var(--ease),
-    opacity 4s ease,
-    filter 4s ease,
-    transform 4s var(--ease);
+    left 850ms var(--ease),
+    right 850ms var(--ease),
+    top 850ms var(--ease),
+    width 850ms var(--ease),
+    height 850ms var(--ease),
+    opacity 650ms ease,
+    filter 850ms ease,
+    transform 850ms var(--ease);
   will-change: transform, opacity;
 }
 
@@ -2188,13 +2188,14 @@ h4 {
   }
 
   .solution-card__index {
-    top: 1.65rem;
+    top: 3rem;
     left: 14%;
+    font-size: 0.6rem;
   }
 
   .solution-card__badge {
     /* top: 4rem; */
-    right: calc(19% + 0.65rem);
+    right: calc(10% + 0.65rem);
     padding: 0.56rem 0.72rem;
     font-size: 0.78rem;
   }

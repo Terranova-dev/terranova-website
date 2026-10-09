@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Reveal from "@/components/Reveal";
 
 const solutions = [
@@ -34,6 +34,7 @@ const solutions = [
 export default function Solutions() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  const resumeTimer = useRef<number | null>(null);
 
   useEffect(() => {
     if (paused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -45,8 +46,23 @@ export default function Solutions() {
     return () => window.clearInterval(timer);
   }, [paused]);
 
+  useEffect(() => () => {
+    if (resumeTimer.current !== null) window.clearTimeout(resumeTimer.current);
+  }, []);
+
+  const pauseAutoplay = () => {
+    setPaused(true);
+
+    if (resumeTimer.current !== null) window.clearTimeout(resumeTimer.current);
+    resumeTimer.current = window.setTimeout(() => {
+      setPaused(false);
+      resumeTimer.current = null;
+    }, 4000);
+  };
+
   const move = (step: number) => {
     setActiveIndex((current) => (current + step + solutions.length) % solutions.length);
+    pauseAutoplay();
   };
 
   return (
@@ -75,12 +91,7 @@ export default function Solutions() {
 
         <div
           className="solutions__carousel"
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
-          onFocus={() => setPaused(true)}
-          onBlur={(event) => {
-            if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setPaused(false);
-          }}
+          onFocus={pauseAutoplay}
           onKeyDown={(event) => {
             if (event.key === "ArrowLeft") move(-1);
             if (event.key === "ArrowRight") move(1);
@@ -147,7 +158,10 @@ export default function Solutions() {
                   aria-current={activeIndex === index ? "true" : undefined}
                   className={`solutions__dot${activeIndex === index ? " is-active" : ""}`}
                   key={solution.name}
-                  onClick={() => setActiveIndex(index)}
+                  onClick={() => {
+                    setActiveIndex(index);
+                    pauseAutoplay();
+                  }}
                   type="button"
                 />
               ))}
