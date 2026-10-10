@@ -2207,12 +2207,14 @@ h4 {
   }
 
   .solution-card__name {
-    font-size: clamp(1.55rem, 7vw, 2rem);
+    padding-left: 0.6rem;
+    font-size: clamp(1.25rem, 5.5vw, 1.6rem);
   }
 
   .solution-card__text {
+    padding-left: 0.6rem;
     margin-top: 0.5rem;
-    font-size: 0.96rem;
+    font-size: 0.8rem;
   }
 
   .solution-card__link {
