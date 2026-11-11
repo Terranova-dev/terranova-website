@@ -1,22 +1,12 @@
 import type { Metadata } from "next";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { ShadeSection } from "@/components/ShadeSection";
 
 export const metadata: Metadata = {
-  title: "Shade Card — Terranova",
+  title: "Shade Library — Terranova Finishes",
   description:
-    "Explore Terranova's curated palette of premium architectural finishes and material shades.",
+    "Explore a curated palette of microconcrete, terrazzo and mineral plaster shades — 12 timeless finishes crafted for contemporary architectural spaces.",
 };
 
 export default function ShadeCardPage() {
-  return (
-    <>
-      <Header />
-      <main>
-        <ShadeSection />
-      </main>
-      <Footer />
-    </>
-  );
+  return <ShadeSection />;
 }

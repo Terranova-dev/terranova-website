@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "Collections", href: "/products" },
   { label: "Projects", href: "" },
+  { label: "Shades", href: "/shade-card" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -16,6 +17,7 @@ function isActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
   if (href === "/products") return pathname.startsWith("/products");
   if (href === "/projects") return pathname.startsWith("/projects");
+  if (href === "/shade-card") return pathname.startsWith("/shade-card");
   if (href === "/about") return pathname.startsWith("/about");
   if (href === "/contact") return pathname.startsWith("/contact");
   return false;
