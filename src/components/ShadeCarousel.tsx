@@ -26,10 +26,10 @@ export function ShadeCarousel({
   const [carouselRef, carouselApi] = useEmblaCarousel({
     align: "start",
     containScroll: "trimSnaps",
+    slidesToScroll: 4,
     breakpoints: {
-      "(max-width: 768px)": {
-        dragFree: true,
-      },
+      "(max-width: 767px)": { slidesToScroll: 1 },
+      "(min-width: 768px) and (max-width: 1023px)": { slidesToScroll: 2 },
     },
   });
   const [canScrollPrev, setCanScrollPrev] = useState(false);
@@ -66,11 +66,17 @@ export function ShadeCarousel({
     }
   };
 
+  const pageCount = carouselApi?.scrollSnapList().length ?? 1;
+  const firstShadeNumber = Math.min(
+    (carouselApi?.slidesInView()[0] ?? currentSlide * 4) + 1,
+    shades.length,
+  );
+
   return (
     <div className="shade-carousel-shell">
       <div className="shade-gallery__controls">
         <p className="shade-gallery__counter" aria-live="polite">
-          {String(currentSlide + 1).padStart(2, "0")} /{" "}
+          {String(firstShadeNumber).padStart(2, "0")} /{" "}
           {String(shades.length).padStart(2, "0")}
         </p>
         <div className="shade-gallery__arrows">
@@ -129,12 +135,12 @@ export function ShadeCarousel({
         role="progressbar"
         aria-label="Slider position"
         aria-valuemin={1}
-        aria-valuemax={shades.length}
-        aria-valuenow={currentSlide + 1}
+        aria-valuemax={pageCount}
+        aria-valuenow={Math.min(currentSlide + 1, pageCount)}
       >
         <span
           className="shade-gallery__progress-value"
-          style={{ width: `${((currentSlide + 1) / shades.length) * 100}%` }}
+          style={{ width: `${((currentSlide + 1) / pageCount) * 100}%` }}
         />
       </div>
     </div>

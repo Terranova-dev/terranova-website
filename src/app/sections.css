@@ -2764,16 +2764,27 @@ h4 {
 }
 
 .shade-track__content {
+  --shade-slide-gap: clamp(0.75rem, 1.5vw, 1.25rem);
+  --shade-track-inset: clamp(0.75rem, 1.5vw, 1.25rem);
+  --shade-slide-gaps: calc(
+    var(--shade-slide-gap) + var(--shade-slide-gap) + var(--shade-slide-gap)
+  );
+  --shade-track-insets: calc(
+    var(--shade-track-inset) + var(--shade-track-inset)
+  );
   display: flex;
-  padding-inline: 1.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  column-gap: var(--shade-slide-gap);
+  padding-inline: var(--shade-track-inset);
 }
 
 .shade-slide {
   box-sizing: border-box;
-  flex: 0 0 calc(min(76vw, 280px) + 2rem);
+  flex: 0 0
+    calc((100% - var(--shade-slide-gaps)) / 4);
   min-width: 0;
-  max-width: 312px;
-  padding-left: 2rem;
+  max-width: none;
 }
 
 .shade-track:focus-visible {
@@ -2791,6 +2802,26 @@ h4 {
 
 .shade-track {
   cursor: grab;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .shade-track__content {
+    --shade-slide-gaps: var(--shade-slide-gap);
+  }
+
+  .shade-slide {
+    flex-basis: calc((100% - var(--shade-slide-gap)) / 2);
+  }
+}
+
+@media (max-width: 767px) {
+  .shade-track__content {
+    --shade-slide-gaps: 0px;
+  }
+
+  .shade-slide {
+    flex-basis: 100%;
+  }
 }
 
 .shade-card {
