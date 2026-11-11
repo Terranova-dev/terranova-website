@@ -285,7 +285,7 @@ a {
   border: 1px solid var(--ink);
   color: var(--ink);
   background: transparent;
-  border-radius: var(--radius);
+  border-radius: 0.9rem;
   transition:
     background 0.5s var(--ease),
     color 0.5s var(--ease),

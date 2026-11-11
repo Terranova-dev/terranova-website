@@ -42,10 +42,10 @@ export default function Footer() {
             residential, hospitality and commercial spaces.
           </p>
           <a
-            href="mailto:contact@terranovafinishes.com"
+            href="mailto:create@terranovafinishes.com"
             className="footer__mail link-underline"
           >
-            contact@terranovafinishes.com
+            create@terranovafinishes.com
           </a>
         </Reveal>
 

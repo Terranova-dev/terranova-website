@@ -1735,7 +1735,7 @@ h4 {
 .product-row__img {
   position: relative;
   aspect-ratio: 1 / 1;
-  border-radius: var(--radius);
+  border-radius: 0.9rem;
 }
 
 .product-row__index {
@@ -1836,6 +1836,14 @@ h4 {
   padding: clamp(1.4rem, 3vw, 2.2rem);
   background: var(--paper);
   border: 1px solid var(--line);
+  border-radius: 0.9rem;
+}
+
+.products-page table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 0.9rem;
+  overflow: hidden;
 }
 
 .product-detail__panel h4 {

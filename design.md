@@ -233,7 +233,7 @@ The contact page in [src/components/ContactPage.tsx](/workspaces/terranova-websi
   - 491 7th Street Extension
   - Gandhipuram
   - Coimbatore 641012, India
-- email: `contact@terranovafinishes.com`
+- email: `create@terranovafinishes.com`
 - phone: `+91 91596 40239`
 - office hours: “Mon – Sat · 10:00 – 18:00”
 
