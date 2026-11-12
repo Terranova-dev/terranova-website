@@ -14,11 +14,12 @@ const palette = [
 ];
 
 const typeScale = [
-  { label: "H1", text: "Floors that hold a room together.", size: "clamp(2.4rem, 7.4vw, 5.6rem)" },
-  { label: "H2", text: "Four surfaces, infinitely composed", size: "clamp(2rem, 5vw, 3.6rem)" },
-  { label: "H3", text: "Specified, supplied & installed", size: "clamp(1.4rem, 2.5vw, 2.1rem)" },
-  { label: "Body", text: "Terranova is a flooring house working with Microconcrete and Terrazzo, using raw materials sourced from Europe and aggregates from Italy.", size: "1.125rem" },
-  { label: "Label", text: "High-End Flooring", size: "0.7rem" },
+  { label: "H1", font: "Newsreader", family: "var(--font-display)", text: "Floors that hold a room together.", size: "clamp(2.4rem, 7.4vw, 5.6rem)" },
+  { label: "H2", font: "Newsreader", family: "var(--font-display)", text: "Four surfaces, infinitely composed", size: "clamp(2rem, 5vw, 3.6rem)" },
+  { label: "H3", font: "Newsreader", family: "var(--font-display)", text: "Specified, supplied & installed", size: "clamp(1.4rem, 2.5vw, 2.1rem)" },
+  { label: "Solutions aside", font: "Newsreader", family: "var(--font-display)", text: "Distinct spaces. Demanding needs. Our floors bring lasting performance to places that matter.", size: "clamp(1.1rem, 1.6vw, 1.35rem)" },
+  { label: "Body", font: "Newsreader", family: "var(--font-body)", text: "Terranova is a flooring house working with Microconcrete and Terrazzo, using raw materials sourced from Europe and aggregates from Italy.", size: "1.125rem" },
+  { label: "Label", font: "Newsreader", family: "var(--font-sans)", text: "High-End Flooring", size: "0.7rem" },
 ];
 
 const productCards = [
@@ -89,8 +90,14 @@ export default function DesignPage() {
             <div className="design-demo design-demo--type">
               {typeScale.map((item) => (
                 <div key={item.label} className="type-sample">
-                  <span className="type-sample__label">{item.label}</span>
-                  <div style={{ fontSize: item.size }} className="type-sample__text">
+                  <div className="type-sample__meta">
+                    <span className="type-sample__label">{item.label}</span>
+                    <span className="type-sample__font">{item.font}</span>
+                  </div>
+                  <div
+                    style={{ fontSize: item.size, fontFamily: item.family }}
+                    className="type-sample__text"
+                  >
                     {item.text}
                   </div>
                 </div>

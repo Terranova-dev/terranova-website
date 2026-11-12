@@ -1,9 +1,11 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import ProductShadeGallery from "@/components/ProductShadeGallery";
 
 const products = [
   {
     id: "microconcrete",
+    shadeFamily: "Microconcrete",
     index: "01",
     eyebrow: "Italian aggregates. European materials. Seamless finishes.",
     title: "Microconcrete Floors & Walls",
@@ -23,6 +25,7 @@ const products = [
   },
   {
     id: "rrs-hard",
+    shadeFamily: "Rock",
     index: "02",
     eyebrow: "Waterproof & breathable plaster",
     title: "Rock",
@@ -35,6 +38,7 @@ const products = [
   },
   {
     id: "rrs-hydrobloc",
+    shadeFamily: "Hydroblock",
     index: "03",
     eyebrow: "Waterproof & breathable plaster",
     title: "Hydroblock",
@@ -47,6 +51,7 @@ const products = [
   },
   {
     id: "terrazzo",
+    shadeFamily: "Terrazzo",
     index: "04",
     eyebrow: "Italian aggregate surfaces",
     title: "Terrazzo",
@@ -362,6 +367,7 @@ export default function ProductsPage() {
               {p.id === "microconcrete" ? <MicroconcreteDetails /> : null}
               {p.id === "rrs-hydrobloc" ? <HydroblockDetails /> : null}
               {p.id === "terrazzo" ? <TerrazzoDetails /> : null}
+              <ProductShadeGallery family={p.shadeFamily} />
             </div>
           ))}
         </div>

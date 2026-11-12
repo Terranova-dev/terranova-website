@@ -24,8 +24,8 @@
   --on-dark: #ece4d4;
   --on-dark-muted: #a89e8a;
   --font-display: "Newsreader", Georgia, "Times New Roman", serif;
-  --font-sans: "Jost", "Inter", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  --font-sans: var(--font-display);
+  --font-body: var(--font-display);
   --maxw: 1320px;
   --gutter: clamp(1.25rem, 5vw, 5rem);
   --section-y: clamp(4.5rem, 10vw, 9rem);
@@ -60,6 +60,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
 }
 
 html {

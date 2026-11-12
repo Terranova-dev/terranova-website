@@ -52,7 +52,7 @@ export function ShadeCard({
             <span className="shade-card__underline" aria-hidden="true" />
           </span>
           <span className="shade-card__finish">
-            {shade.family} · {shade.finish}
+            {shade.finish}
           </span>
         </span>
       </span>

@@ -15,6 +15,8 @@ interface ShadeCarouselProps {
   selectedId: string | null;
   onOpen: (shade: Shade) => void;
   registerCard: (id: string, el: HTMLButtonElement | null) => void;
+  autoAdvanceMs?: number;
+  isPaused?: boolean;
 }
 
 export function ShadeCarousel({
@@ -22,6 +24,8 @@ export function ShadeCarousel({
   selectedId,
   onOpen,
   registerCard,
+  autoAdvanceMs,
+  isPaused = false,
 }: ShadeCarouselProps) {
   const [carouselRef, carouselApi] = useEmblaCarousel({
     align: "start",
@@ -35,6 +39,7 @@ export function ShadeCarousel({
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [autoPaused, setAutoPaused] = useState(false);
 
   useEffect(() => {
     if (!carouselApi) return;
@@ -56,6 +61,24 @@ export function ShadeCarousel({
     };
   }, [carouselApi]);
 
+  useEffect(() => {
+    if (!carouselApi || !autoAdvanceMs || autoPaused || isPaused) return;
+
+    const timer = window.setInterval(() => {
+      if (
+        document.hidden ||
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ) {
+        return;
+      }
+
+      if (carouselApi.canScrollNext()) carouselApi.scrollNext();
+      else carouselApi.scrollTo(0);
+    }, autoAdvanceMs);
+
+    return () => window.clearInterval(timer);
+  }, [autoAdvanceMs, autoPaused, carouselApi, isPaused]);
+
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (event.key === "ArrowLeft") {
       event.preventDefault();
@@ -73,7 +96,19 @@ export function ShadeCarousel({
   );
 
   return (
-    <div className="shade-carousel-shell">
+    <div
+      className="shade-carousel-shell"
+      onMouseEnter={() => setAutoPaused(true)}
+      onMouseLeave={(event) =>
+        setAutoPaused(event.currentTarget.contains(document.activeElement))
+      }
+      onFocusCapture={() => setAutoPaused(true)}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+          setAutoPaused(event.currentTarget.matches(":hover"));
+        }
+      }}
+    >
       <div className="shade-gallery__controls">
         <p className="shade-gallery__counter" aria-live="polite">
           {String(firstShadeNumber).padStart(2, "0")} /{" "}
