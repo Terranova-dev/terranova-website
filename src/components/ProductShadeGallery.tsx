@@ -2,8 +2,8 @@
 
 import { useCallback, useRef, useState } from "react";
 import { shades, type Shade } from "@/data/shades";
-import { ShadeCarousel } from "@/components/ShadeCarousel";
 import { ShadePreview } from "@/components/ShadePreview";
+import { ShadeCard } from "@/components/ShadeCard";
 
 type ProductShadeGalleryProps = {
   family: Shade["family"];
@@ -14,6 +14,7 @@ export default function ProductShadeGallery({
 }: ProductShadeGalleryProps) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [previewIndex, setPreviewIndex] = useState<number | null>(null);
+  const [isPaused, setIsPaused] = useState(false);
   const cardRefs = useRef(new Map<string, HTMLButtonElement>());
 
   const registerCard = useCallback(
@@ -59,14 +60,51 @@ export default function ProductShadeGallery({
             {String(shades.length).padStart(2, "0")} shades
           </span>
         </div>
-        <ShadeCarousel
-          shades={shades}
-          selectedId={selectedId}
-          onOpen={openPreview}
-          registerCard={registerCard}
-          autoAdvanceMs={3000}
-          isPaused={previewIndex !== null}
-        />
+        <div
+          className={`product-shades__marquee${isPaused || previewIndex !== null ? " is-paused" : ""}`}
+          role="region"
+          aria-label={`${family} shade samples`}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={(event) =>
+            setIsPaused(event.currentTarget.contains(document.activeElement))
+          }
+          onFocusCapture={() => setIsPaused(true)}
+          onBlurCapture={(event) => {
+            if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+              setIsPaused(event.currentTarget.matches(":hover"));
+            }
+          }}
+        >
+          <div className="product-shades__marquee-track">
+            {[false, true].map((visualClone) => (
+              <div
+                key={visualClone ? "clone" : "shades"}
+                className={`product-shades__marquee-group${visualClone ? " product-shades__marquee-group--clone" : ""}`}
+                aria-hidden={visualClone || undefined}
+              >
+                {shades.map((shade, index) => (
+                  <div
+                    className="product-shades__marquee-item"
+                    key={`${visualClone ? "clone-" : ""}${shade.id}`}
+                  >
+                    <ShadeCard
+                      shade={shade}
+                      index={index}
+                      selected={selectedId === shade.id}
+                      onOpen={openPreview}
+                      registerRef={
+                        visualClone
+                          ? undefined
+                          : (element) => registerCard(shade.id, element)
+                      }
+                      visualClone={visualClone}
+                    />
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {previewShade && (

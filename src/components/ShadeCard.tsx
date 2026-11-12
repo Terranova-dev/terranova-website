@@ -8,6 +8,7 @@ interface ShadeCardProps {
   selected: boolean;
   onOpen: (shade: Shade) => void;
   registerRef?: (el: HTMLButtonElement | null) => void;
+  visualClone?: boolean;
 }
 
 export function ShadeCard({
@@ -16,6 +17,7 @@ export function ShadeCard({
   selected,
   onOpen,
   registerRef,
+  visualClone = false,
 }: ShadeCardProps) {
   return (
     <button
@@ -23,6 +25,8 @@ export function ShadeCard({
       type="button"
       onClick={() => onOpen(shade)}
       aria-pressed={selected}
+      aria-hidden={visualClone || undefined}
+      tabIndex={visualClone ? -1 : undefined}
       aria-label={`${shade.name}, shade ${shade.code} — open enlarged preview`}
       className="shade-card"
       style={{ "--stagger": `${index * 70}ms` } as CSSProperties}
