@@ -2022,13 +2022,36 @@ h4 {
     --product-shade-gap: 0.75rem;
   }
 
+  .product-shades__marquee:has(.shade-card:focus-visible) {
+    outline: none;
+    scrollbar-width: none;
+  }
+
+  .product-shades__marquee:has(.shade-card:focus-visible)::-webkit-scrollbar {
+    display: none;
+  }
+
   .product-shades__marquee-track {
     animation-duration: 56s;
   }
 
   .product-shades__marquee-item {
-    flex-basis: 86cqw;
-    width: 86cqw;
+    flex: 0 0 46cqw;
+    width: 46cqw;
+  }
+
+  .product-shades .shade-card__caption {
+    display: flex;
+    min-height: 6.8rem;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .product-shades .shade-card__finish {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
   }
 }
 
@@ -3446,11 +3469,37 @@ h4 {
   }
 
   .shade-panel {
+    width: min(420px, 88vw);
+    max-height: 88dvh;
     grid-template-columns: 1fr;
+    overflow-y: auto;
   }
 
   .shade-preview__swatch {
-    min-height: 58vw;
+    min-height: clamp(150px, 42vw, 220px);
+  }
+
+  .shade-preview__content {
+    gap: 0.8rem;
+    padding: 1.25rem;
+  }
+
+  .shade-preview__name {
+    font-size: clamp(2rem, 8vw, 2.6rem);
+  }
+
+  .shade-preview__description {
+    margin-top: 0.65rem;
+  }
+
+  .shade-preview__details {
+    gap: 0.65rem;
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+  }
+
+  .shade-preview__actions {
+    margin-top: 1.25rem;
   }
 }
 
